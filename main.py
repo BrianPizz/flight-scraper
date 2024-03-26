@@ -13,19 +13,10 @@ service = Service(executable_path=chrome_driver_path)
 driver = webdriver.Chrome(service=service)
 
 # URL of the website to scrape
-url = "https://google.com"
+url = "https://www.expedia.com/Flights-Search?flight-type=on&mode=search&trip=roundtrip&leg1=from:Los%20Angeles,%20CA,%20United%20States%20of%20America%20(LAX-Los%20Angeles%20Intl.),to:Columbus,%20OH,%20United%20States%20of%20America%20(CMH-John%20Glenn%20Columbus%20Intl.),departure:4/9/2024TANYT&leg2=from:Columbus,%20OH,%20United%20States%20of%20America%20(CMH-John%20Glenn%20Columbus%20Intl.),to:Los%20Angeles,%20CA,%20United%20States%20of%20America%20(LAX-Los%20Angeles%20Intl.),departure:4/16/2024TANYT&options=cabinclass:economy&fromDate=4/9/2024&toDate=4/16/2024&d1=2024-4-9&d2=2024-4-16&passengers=adults:1,infantinlap:N"
 
 # Open the website in the browser
 driver.get(url)
-
-# Find the search input element by its class name
-input_element = driver.find_element(By.CLASS_NAME, "gLFyf")
-
-# Clear any existing text in the search input field
-input_element.clear()
-
-# Enter the search query "dune 2" into the search input field and press Enter
-input_element.send_keys("dune 2" + Keys.ENTER)
 
 # Wait for the search results to load (you can adjust the sleep time as needed)
 time.sleep(10)
